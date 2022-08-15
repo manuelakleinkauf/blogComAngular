@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="blog">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link href="./css/style.css" rel="stylesheet"/>
+    <title>Blog</title>
+    <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="https://getbootstrap.com/docs/5.2/assets/img/favicons/favicon.ico">
+    <link href="https://getbootstrap.com/docs/4.6/examples/album/album.css" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li><a href="#h-moda">Moda</a></li>
+                <li><a href="#h-viagem">Viagem</a></li>
+                <li><a href="#h-bemEstar">Bem estar</a></li>
+                <li><a href="#h-lifestyle">Lifestyle</a></li>
+            </ul>
+        </nav> 
+    </header>
+    
+        <section id="moda" class="container">
+            <h1 id="h-moda">MODA</h1>
+            <div class="album py-5 bg-light">
+                <div class="row" ng-controller="Rest">
+                   <div class="col-md-4" ng-repeat="publicacao in publicacoes">
+                     <div class="card mb-4 shadow-sm">
+                       <img id="imgAngular" ng-src="https://api-fake-blog.herokuapp.com{{ publicacao.thumbImage }}" >
+                       <div class="card-body">
+                         <p class="card-text">{{ publicacao.title }}</p>
+                         <div class="d-flex justify-content-between align-items-center">
+                           <small id= "textAngular" class="text-muted">{{ publicacao.description }}</small>
+                         </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+        </section>
+        
+        <section id="viagem" class="container">
+            <h1 id="h-viagem">VIAGEM</h1>
+            <div class="fotoViagem">
+                <img src="./imagens/viagem1.jpg"/>
+                <h2 class="tituloViagem">Canadá: dicas de restaurantes e </br>pontos turísticos</h2>
+            </div>
+            <div class="fotoViagem">
+                <img src="./imagens/viagem2.jpg"/>
+                <h2 class="tituloViagem">O que levar na mala de inverno!</h2>
+            </div>
+            <div class="fotoViagem">
+                <img src="./imagens/viagem3.jpg"/>
+                <h2 class="tituloViagem">Jericoacoara: Guia completo!</h2>
+            </div>
+            <div class="fotoViagem">
+                <img src="./imagens/viagem4.jpg"/>
+                <h2 class="tituloViagem">O que levar para trilhas na montanha</h2>
+            </div>
+            <div class="fotoViagem">
+                <img src="./imagens/viagem5.jpg"/>
+                <h2 class="tituloViagem">4 bloquinhos de carnaval que </br>você precisa ir em BH!</h2>
+            </div>
+            <div class="fotoViagem">
+                <img src="./imagens/viagem6.png"/>
+                <h2 class="tituloViagem">Os melhores resorts da Bahia!</h2>
+            </div>
+        </section>
+
+        <section id="bemEstar">
+            <div>
+                <h1 id="h-bemEstar">BEM ESTAR</h1>
+                <h2>Como ficar mais calmo?</h2>
+                <p>Nada de complicar ou de correr até a farmácia em busca de algum calmante! A melhor cura para acalmar  é simplesmente a atividade física. Sim, mexer o corpinho traz benefícios que vão bem além de queimar calorias e é a solução de como ficar mais calmo!</p>
+                <img src="./imagens/bemEstar2.jpg">
+            </div>
+            <div>
+                <h2>Aprenda como tirar mau hálito!</h2>
+                <p>A primeira e mais importante dica é a higienização. Lembre-se de que a escovação impede a formação da placa bacteriana e, consequentemente, do cálculo dentário.
+                    Petiscos e brinquedos especiais também ajuda na saúde dos dentes, já que eles são criados para limpar os dentes, fortalecer as gengivas e prevenir o acúmulo de tártaro.
+                    O spray bucal para cachorro e o enxaguante bucal são ótimos para manter a boca sempre cheirosa e longe de bactérias.
+                </p>
+                <img src="./imagens/bemEstar3.jpg">
+            </div>
+        </section>
+
+        <section id="lifestyle" class="container">
+            <h1 id="h-lifestyle">LIFESTYLE</h1>
+            <div>
+                <img src="./imagens/lifestyle1.jpg"/>
+                <h2 class="tituloLifestyle">Casamento</h2>
+            </div>
+            <div>
+                <img src="./imagens/lifestyle2.jpg"/>
+                <h2 class="tituloLifestyle">Dia do Rock: Melhores músicas</h2>
+            </div>
+            <div>
+                <img src="./imagens/lifestyle3.jpg"/>
+                <h2 class="tituloLifestyle">Indicações de livros!</h2>
+            </div>
+        </section>
+</body>
+</html>
